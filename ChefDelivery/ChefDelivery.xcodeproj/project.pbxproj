@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D434FB962C9C9C170020AD70 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434FB952C9C9C170020AD70 /* NavigationBar.swift */; };
 		D454EE542C9C728F006F60AD /* ChefDeliveryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D454EE532C9C728F006F60AD /* ChefDeliveryApp.swift */; };
 		D454EE562C9C728F006F60AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D454EE552C9C728F006F60AD /* ContentView.swift */; };
 		D454EE582C9C7290006F60AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D454EE572C9C7290006F60AD /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D434FB952C9C9C170020AD70 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		D454EE502C9C728F006F60AD /* ChefDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChefDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D454EE532C9C728F006F60AD /* ChefDeliveryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefDeliveryApp.swift; sourceTree = "<group>"; };
 		D454EE552C9C728F006F60AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D434FB942C9C9C060020AD70 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				D434FB952C9C9C170020AD70 /* NavigationBar.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
 		D454EE472C9C728F006F60AD = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +61,7 @@
 		D454EE522C9C728F006F60AD /* ChefDelivery */ = {
 			isa = PBXGroup;
 			children = (
+				D434FB942C9C9C060020AD70 /* NavigationBar */,
 				D454EE532C9C728F006F60AD /* ChefDeliveryApp.swift */,
 				D454EE552C9C728F006F60AD /* ContentView.swift */,
 				D454EE572C9C7290006F60AD /* Assets.xcassets */,
@@ -139,6 +150,7 @@
 			files = (
 				D454EE562C9C728F006F60AD /* ContentView.swift in Sources */,
 				D454EE542C9C728F006F60AD /* ChefDeliveryApp.swift in Sources */,
+				D434FB962C9C9C170020AD70 /* NavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
