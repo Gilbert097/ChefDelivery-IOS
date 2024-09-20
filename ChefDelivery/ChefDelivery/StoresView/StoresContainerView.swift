@@ -14,10 +14,15 @@ struct StoresContainerView: View {
                 .font(.headline)
             
             VStack(alignment: .leading, spacing: 30) {
-                ForEach(storesMock) {
-                    StoreItemView(orderType: $0)
+                ForEach(storesMock) { storeItem in
+                    NavigationLink {
+                        StoreDetailView(order: storeItem)
+                    } label: {
+                        StoreItemView(orderType: storeItem)
+                    }
                 }
             }
+            .foregroundStyle(.black)
         }
         .padding(20)
     }
