@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D434FB962C9C9C170020AD70 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434FB952C9C9C170020AD70 /* NavigationBar.swift */; };
+		D434FB9A2C9CE8ED0020AD70 /* OrderTypeGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434FB992C9CE8ED0020AD70 /* OrderTypeGridView.swift */; };
+		D434FB9D2C9CE9750020AD70 /* OrderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434FB9C2C9CE9750020AD70 /* OrderType.swift */; };
+		D434FB9F2C9CEAB70020AD70 /* DataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434FB9E2C9CEAB70020AD70 /* DataSourceMock.swift */; };
 		D454EE542C9C728F006F60AD /* ChefDeliveryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D454EE532C9C728F006F60AD /* ChefDeliveryApp.swift */; };
 		D454EE562C9C728F006F60AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D454EE552C9C728F006F60AD /* ContentView.swift */; };
 		D454EE582C9C7290006F60AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D454EE572C9C7290006F60AD /* Assets.xcassets */; };
@@ -16,6 +19,9 @@
 
 /* Begin PBXFileReference section */
 		D434FB952C9C9C170020AD70 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		D434FB992C9CE8ED0020AD70 /* OrderTypeGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeGridView.swift; sourceTree = "<group>"; };
+		D434FB9C2C9CE9750020AD70 /* OrderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderType.swift; sourceTree = "<group>"; };
+		D434FB9E2C9CEAB70020AD70 /* DataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceMock.swift; sourceTree = "<group>"; };
 		D454EE502C9C728F006F60AD /* ChefDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChefDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D454EE532C9C728F006F60AD /* ChefDeliveryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefDeliveryApp.swift; sourceTree = "<group>"; };
 		D454EE552C9C728F006F60AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +48,23 @@
 			path = NavigationBar;
 			sourceTree = "<group>";
 		};
+		D434FB982C9CE8D80020AD70 /* GridView */ = {
+			isa = PBXGroup;
+			children = (
+				D434FB992C9CE8ED0020AD70 /* OrderTypeGridView.swift */,
+			);
+			path = GridView;
+			sourceTree = "<group>";
+		};
+		D434FB9B2C9CE9670020AD70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D434FB9C2C9CE9750020AD70 /* OrderType.swift */,
+				D434FB9E2C9CEAB70020AD70 /* DataSourceMock.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D454EE472C9C728F006F60AD = {
 			isa = PBXGroup;
 			children = (
@@ -61,9 +84,11 @@
 		D454EE522C9C728F006F60AD /* ChefDelivery */ = {
 			isa = PBXGroup;
 			children = (
-				D434FB942C9C9C060020AD70 /* NavigationBar */,
-				D454EE532C9C728F006F60AD /* ChefDeliveryApp.swift */,
 				D454EE552C9C728F006F60AD /* ContentView.swift */,
+				D454EE532C9C728F006F60AD /* ChefDeliveryApp.swift */,
+				D434FB942C9C9C060020AD70 /* NavigationBar */,
+				D434FB982C9CE8D80020AD70 /* GridView */,
+				D434FB9B2C9CE9670020AD70 /* Model */,
 				D454EE572C9C7290006F60AD /* Assets.xcassets */,
 				D454EE592C9C7290006F60AD /* Preview Content */,
 			);
@@ -148,7 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D434FB9D2C9CE9750020AD70 /* OrderType.swift in Sources */,
 				D454EE562C9C728F006F60AD /* ContentView.swift in Sources */,
+				D434FB9F2C9CEAB70020AD70 /* DataSourceMock.swift in Sources */,
+				D434FB9A2C9CE8ED0020AD70 /* OrderTypeGridView.swift in Sources */,
 				D454EE542C9C728F006F60AD /* ChefDeliveryApp.swift in Sources */,
 				D434FB962C9C9C170020AD70 /* NavigationBar.swift in Sources */,
 			);
