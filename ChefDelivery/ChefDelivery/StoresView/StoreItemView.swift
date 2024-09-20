@@ -23,10 +23,12 @@ struct StoreItemView: View {
                 Text(orderType.name)
                     .font(.subheadline)
             }
+            
+            Spacer()
         }
     }
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    StoreItemView(orderType: storesItens.first!)
+    StoreItemView(orderType: storesMock.first!)
 }

@@ -25,4 +25,10 @@ let carouselItens = [
 ]
 
 
-let storesItens = [ OrderType(id: 1, name: "Monstro Burger", image: "monstro-burger-logo")]
+let storesMock = [
+    OrderType(id: 1, name: "Monstro burger", image: "monstro-burger-logo"),
+    OrderType(id: 2, name:"Food court", image: "food-court-logo"),
+    OrderType(id: 3, name: "Carbron", image: "carbron-logo"),
+    OrderType(id: 4, name: "Padaria", image: "bakery-logo"),
+    OrderType(id: 5, name: "Açaí Panda", image: "acai-panda-logo")
+]
