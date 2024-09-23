@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct StoreDetailView: View {
-    let order:  OrderType
+    let store:  StoreType
     
     var body: some View {
-        Text(order.name)
+        Text(store.name)
     }
 }
 
 #Preview {
-    StoreDetailView(order: storesMock.first!)
+    StoreDetailView(store: storesMock.first!)
 }
