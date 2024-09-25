@@ -60,7 +60,7 @@ struct StoreDetailView: View {
                             Text(product.description)
                                 .foregroundStyle(.black.opacity(0.5))
                             
-                            Text(String(product.price))
+                            Text(product.formattedPrice)
                         }
                         
                         Spacer()
