@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct StoreType: Identifiable {
+class StoreType: Identifiable, ObservableObject {
+    
     let id: Int
     let name: String
     let logoImage: String
@@ -16,6 +17,24 @@ struct StoreType: Identifiable {
     let stars: Int
     let distance: Int
     let products: [ProductType]
+    
+    public  init(id: Int, 
+                 name: String,
+                 logoImage: String,
+                 headerImage: String,
+                 location: String,
+                 stars: Int,
+                 distance: Int, 
+                 products: [ProductType]) {
+        self.id = id
+        self.name = name
+        self.logoImage = logoImage
+        self.headerImage = headerImage
+        self.location = location
+        self.stars = stars
+        self.distance = distance
+        self.products = products
+    }
 }
 
 struct ProductType: Identifiable {

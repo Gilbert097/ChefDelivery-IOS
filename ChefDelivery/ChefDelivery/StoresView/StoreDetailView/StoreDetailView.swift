@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct StoreDetailView: View {
-    let store:  StoreType
+    let store: StoreType
     
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                StoreDetailHeaderView(store: store)
+                StoreDetailHeaderView()
+                    .environmentObject(store)
+                
                 StoreDetailProductsView(products: store.products)
             }
             .navigationTitle(store.name)
