@@ -10,6 +10,7 @@ import SwiftUI
 struct ProductDetailView: View {
     
     let product: ProductType
+    @State private var productQuantity = 1
     
     var body: some View {
         VStack {
@@ -33,7 +34,41 @@ struct ProductDetailView: View {
                     .padding(.horizontal)
                 
                 
-                Spacer()
+                HStack {
+                    Spacer()
+                    VStack {
+                        Text("Quantidade")
+                            .font(.title3)
+                            .bold()
+                        
+                        HStack {
+                            Button {
+                                if self.productQuantity > 1 {
+                                    self.productQuantity -= 1
+                                }
+                            } label: {
+                                Image(systemName: "minus.circle.fill")
+                                    .foregroundStyle(LinearGradient(colors: [Color("ColorRed")], startPoint: .top, endPoint: .bottom))
+                                    .font(.title)
+                                    .bold()
+                            }
+
+                            Text("\(productQuantity)")
+                                .font(.title2)
+                                .bold()
+                            
+                            Button {
+                                self.productQuantity += 1
+                            } label: {
+                                Image(systemName: "plus.circle.fill")
+                                    .foregroundStyle(LinearGradient(colors: [Color("ColorRed")], startPoint: .top, endPoint: .bottom))
+                                    .font(.title)
+                                    .bold()
+                            }
+                        }
+                    }
+                    Spacer()
+                }
                 
                 HStack {
                     Spacer()
