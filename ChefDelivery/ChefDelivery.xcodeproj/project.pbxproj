@@ -24,6 +24,9 @@
 		D454EE562C9C728F006F60AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D454EE552C9C728F006F60AD /* ContentView.swift */; };
 		D454EE582C9C7290006F60AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D454EE572C9C7290006F60AD /* Assets.xcassets */; };
 		D454EE5B2C9C7290006F60AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D454EE5A2C9C7290006F60AD /* Preview Assets.xcassets */; };
+		D495F94E2CA742160034B229 /* StoreDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F94D2CA742160034B229 /* StoreDetailHeaderView.swift */; };
+		D495F9502CA742920034B229 /* StoreDetailProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F94F2CA742920034B229 /* StoreDetailProductsView.swift */; };
+		D495F9522CA743410034B229 /* StoreDetailProductItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F9512CA743410034B229 /* StoreDetailProductItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		D454EE552C9C728F006F60AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D454EE572C9C7290006F60AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D454EE5A2C9C7290006F60AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D495F94D2CA742160034B229 /* StoreDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailHeaderView.swift; sourceTree = "<group>"; };
+		D495F94F2CA742920034B229 /* StoreDetailProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailProductsView.swift; sourceTree = "<group>"; };
+		D495F9512CA743410034B229 /* StoreDetailProductItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailProductItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +103,9 @@
 		D434FBA72C9DED900020AD70 /* StoresView */ = {
 			isa = PBXGroup;
 			children = (
+				D495F94C2CA7420A0034B229 /* StoreDetailView */,
 				D434FBA82C9DEDA90020AD70 /* StoreItemView.swift */,
 				D434FBAA2C9DF3650020AD70 /* StoresContainerView.swift */,
-				D434FBAC2C9E1D510020AD70 /* StoreDetailView.swift */,
 			);
 			path = StoresView;
 			sourceTree = "<group>";
@@ -160,6 +166,17 @@
 				D454EE5A2C9C7290006F60AD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D495F94C2CA7420A0034B229 /* StoreDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				D434FBAC2C9E1D510020AD70 /* StoreDetailView.swift */,
+				D495F94D2CA742160034B229 /* StoreDetailHeaderView.swift */,
+				D495F94F2CA742920034B229 /* StoreDetailProductsView.swift */,
+				D495F9512CA743410034B229 /* StoreDetailProductItemView.swift */,
+			);
+			path = StoreDetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,13 +252,16 @@
 				D434FB9D2C9CE9750020AD70 /* OrderType.swift in Sources */,
 				D434FBA42C9DB9CF0020AD70 /* CarouselItemView.swift in Sources */,
 				D454EE562C9C728F006F60AD /* ContentView.swift in Sources */,
+				D495F9502CA742920034B229 /* StoreDetailProductsView.swift in Sources */,
 				D434FB9F2C9CEAB70020AD70 /* DataSourceMock.swift in Sources */,
 				D434FBAB2C9DF3650020AD70 /* StoresContainerView.swift in Sources */,
 				D434FBA12C9CF6920020AD70 /* OrderTypeView.swift in Sources */,
 				D434FBA92C9DEDA90020AD70 /* StoreItemView.swift in Sources */,
 				D434FBAD2C9E1D510020AD70 /* StoreDetailView.swift in Sources */,
 				D434FBB22CA4A3510020AD70 /* Double+.swift in Sources */,
+				D495F9522CA743410034B229 /* StoreDetailProductItemView.swift in Sources */,
 				D434FB9A2C9CE8ED0020AD70 /* OrderTypeGridView.swift in Sources */,
+				D495F94E2CA742160034B229 /* StoreDetailHeaderView.swift in Sources */,
 				D454EE542C9C728F006F60AD /* ChefDeliveryApp.swift in Sources */,
 				D434FBB52CA4CD720020AD70 /* ProductDetailView.swift in Sources */,
 				D434FB962C9C9C170020AD70 /* NavigationBar.swift in Sources */,
