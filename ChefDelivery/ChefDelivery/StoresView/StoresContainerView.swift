@@ -24,14 +24,14 @@ struct StoresContainerView: View {
                 
                 Spacer()
                 
-                Menu("Filtrar") {
+                Menu("Estrelas") {
                     
                     Button {
                         self.indexFilterSelected = 0
                     } label: {
                         Text("Limpar filtro")
                     }
-
+                    
                     Divider()
                     
                     ForEach(1...5, id: \.self) { index in
@@ -44,7 +44,27 @@ struct StoresContainerView: View {
                                 Text("\(index) estrela ou mais")
                             }
                         }
-
+                        
+                    }
+                }
+                .foregroundStyle(LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom))
+                
+                Menu("Distância") {
+                    
+                    Button {
+                        self.indexFilterSelected = 0
+                    } label: {
+                        Text("Limpar filtro")
+                    }
+                    
+                    Divider()
+                    
+                    ForEach(Array(stride(from: 0, through: 20, by: 5)), id: \.self) { index in
+                        Button {
+                            self.indexFilterSelected = index
+                        } label: {
+                            Text("De \(index) até \(index + 5) km")
+                        }
                     }
                 }
                 .foregroundStyle(LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom))
