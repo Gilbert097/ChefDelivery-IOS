@@ -24,6 +24,7 @@ struct ProductDetailView: View {
                     .font(.title)
                     .bold()
                     .padding(.horizontal)
+                    .padding(.top)
                 
                 Text(product.description)
                     .padding(.horizontal)
@@ -32,10 +33,11 @@ struct ProductDetailView: View {
                     .font(.title3)
                     .bold()
                     .padding(.horizontal)
-                
+                Spacer()
                 
                 HStack {
                     Spacer()
+                    
                     VStack {
                         Text("Quantidade")
                             .font(.title3)
@@ -69,6 +71,8 @@ struct ProductDetailView: View {
                     }
                     Spacer()
                 }
+                
+                Spacer()
                 
                 HStack {
                     Spacer()
