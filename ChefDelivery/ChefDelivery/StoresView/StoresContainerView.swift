@@ -11,6 +11,10 @@ struct StoresContainerView: View {
     
     @State private var indexFilterSelected: Int = 0
     
+    private var storesFilter: [StoreType] {
+        storesMock.filter { $0.stars >= indexFilterSelected }
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             
@@ -38,7 +42,7 @@ struct StoresContainerView: View {
             }
             
             VStack(alignment: .leading, spacing: 30) {
-                ForEach(storesMock) { storeItem in
+                ForEach(storesFilter) { storeItem in
                     NavigationLink {
                         StoreDetailView(store: storeItem)
                     } label: {
