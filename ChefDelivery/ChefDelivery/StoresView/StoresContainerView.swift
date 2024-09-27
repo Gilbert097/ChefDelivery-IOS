@@ -9,10 +9,16 @@ import SwiftUI
 
 struct StoresContainerView: View {
     
-    @State private var indexFilterSelected: Int = 0
+    @State private var starFilter: Int = 0
+    @State private var distanceFilter: (min: Int, max: Int)? = nil
     
     private var storesFilter: [StoreType] {
-        storesMock.filter { $0.stars >= indexFilterSelected }
+        let starsResult = storesMock.filter { $0.stars >= starFilter }
+        
+        if let (min, max) = distanceFilter {
+            return starsResult.filter{($0.distance >= min && $0.distance <= max)}
+        }
+        return starsResult
     }
     
     var body: some View {
@@ -27,7 +33,7 @@ struct StoresContainerView: View {
                 Menu("Estrelas") {
                     
                     Button {
-                        self.indexFilterSelected = 0
+                        self.starFilter = 0
                     } label: {
                         Text("Limpar filtro")
                     }
@@ -36,7 +42,7 @@ struct StoresContainerView: View {
                     
                     ForEach(1...5, id: \.self) { index in
                         Button {
-                            self.indexFilterSelected = index
+                            self.starFilter = index
                         } label: {
                             if index > 1 {
                                 Text("\(index) estrelas ou mais")
@@ -52,7 +58,7 @@ struct StoresContainerView: View {
                 Menu("Distância") {
                     
                     Button {
-                        self.indexFilterSelected = 0
+                        self.distanceFilter = nil
                     } label: {
                         Text("Limpar filtro")
                     }
@@ -60,10 +66,12 @@ struct StoresContainerView: View {
                     Divider()
                     
                     ForEach(Array(stride(from: 0, through: 20, by: 5)), id: \.self) { index in
+                        let min = index
+                        let max = index + 5
                         Button {
-                            self.indexFilterSelected = index
+                            self.distanceFilter = (min: min, max: max)
                         } label: {
-                            Text("De \(index) até \(index + 5) km")
+                            Text("De \(min) até \(max) km")
                         }
                     }
                 }
