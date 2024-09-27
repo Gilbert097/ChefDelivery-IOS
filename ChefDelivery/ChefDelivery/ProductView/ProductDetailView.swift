@@ -25,14 +25,19 @@ struct ProductDetailView: View {
                     .bold()
                     .padding(.horizontal)
                     .padding(.top)
+                    .foregroundStyle(LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom))
                 
                 Text(product.description)
                     .padding(.horizontal)
+                    .foregroundStyle(LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom))
+                    .multilineTextAlignment(.leading)
                 
                 Text(product.formattedPrice)
                     .font(.title3)
                     .bold()
                     .padding(.horizontal)
+                    .foregroundStyle(LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom))
+                
                 Spacer()
                 
                 HStack {
@@ -42,6 +47,7 @@ struct ProductDetailView: View {
                         Text("Quantidade")
                             .font(.title3)
                             .bold()
+                            .foregroundStyle(LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom))
                         
                         HStack {
                             Button {
@@ -58,6 +64,7 @@ struct ProductDetailView: View {
                             Text("\(productQuantity)")
                                 .font(.title2)
                                 .bold()
+                                .foregroundStyle(LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom))
                             
                             Button {
                                 self.productQuantity += 1
