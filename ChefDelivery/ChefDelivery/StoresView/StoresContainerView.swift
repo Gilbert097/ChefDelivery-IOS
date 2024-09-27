@@ -26,6 +26,14 @@ struct StoresContainerView: View {
                 
                 Menu("Filtrar") {
                     
+                    Button {
+                        self.indexFilterSelected = 0
+                    } label: {
+                        Text("Limpar filtro")
+                    }
+
+                    Divider()
+                    
                     ForEach(1...5, id: \.self) { index in
                         Button {
                             self.indexFilterSelected = index
@@ -39,6 +47,7 @@ struct StoresContainerView: View {
 
                     }
                 }
+                .foregroundStyle(LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom))
             }
             
             VStack(alignment: .leading, spacing: 30) {
