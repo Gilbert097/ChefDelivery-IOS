@@ -42,11 +42,22 @@ struct StoresContainerView: View {
             }
             
             VStack(alignment: .leading, spacing: 30) {
-                ForEach(storesFilter) { storeItem in
-                    NavigationLink {
-                        StoreDetailView(store: storeItem)
-                    } label: {
-                        StoreItemView(store: storeItem)
+                
+                if self.storesFilter.isEmpty {
+                    Text("Nenhum resultado encontrado.")
+                        .font(.title2)
+                        .bold()
+                        .foregroundStyle(LinearGradient(colors: [Color("ColorRed")], startPoint: .top, endPoint: .bottom))
+                        .padding(.vertical, 32)
+                        .frame(maxWidth: .infinity)
+                    
+                } else {
+                    ForEach(storesFilter) { storeItem in
+                        NavigationLink {
+                            StoreDetailView(store: storeItem)
+                        } label: {
+                            StoreItemView(store: storeItem)
+                        }
                     }
                 }
             }
