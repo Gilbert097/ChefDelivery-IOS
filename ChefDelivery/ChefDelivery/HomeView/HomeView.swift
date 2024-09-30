@@ -11,6 +11,8 @@ struct HomeView: View {
     
     @State private var isAnimating = false
     @State private var imageOffset: CGSize = .zero
+    @State private var buttonOffset: CGFloat = .zero
+    
     private let buttonHeight: CGFloat = 80
     
     var body: some View {
@@ -108,6 +110,20 @@ struct HomeView: View {
                             
                             Spacer()
                         }
+                        .offset(x: self.buttonOffset)
+                        .gesture(
+                            DragGesture()
+                                .onChanged({ value in
+                                    withAnimation(.easeInOut(duration: 0.25)) {
+                                        self.buttonOffset = value.translation.width
+                                    }
+                                })
+                                .onEnded({ _ in
+                                    withAnimation(.easeInOut(duration: 0.25)) {
+                                        self.buttonOffset = .zero
+                                    }
+                                })
+                        )
                     }
                     .frame(width: geometry.size.width - 60, height: buttonHeight)
                 }
