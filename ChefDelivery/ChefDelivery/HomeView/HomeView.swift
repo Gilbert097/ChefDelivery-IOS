@@ -92,6 +92,14 @@ struct HomeView: View {
                             .offset(x: 20)
                         
                         HStack {
+                            Capsule()
+                                .fill(Color("ColorRed"))
+                                .frame(width: buttonOffset + buttonHeight)
+                            
+                            Spacer()
+                        }
+                         
+                        HStack {
                             
                             ZStack {
                                 Circle()
@@ -114,13 +122,23 @@ struct HomeView: View {
                         .gesture(
                             DragGesture()
                                 .onChanged({ value in
-                                    withAnimation(.easeInOut(duration: 0.25)) {
-                                        self.buttonOffset = value.translation.width
+                                    let finalButtonWidth = (geometry.size.width - 60) - buttonHeight
+                                    if value.translation.width >= .zero
+                                        && buttonOffset <= finalButtonWidth {
+                                        
+                                        withAnimation(.easeInOut(duration: 0.25)) {
+                                            self.buttonOffset = value.translation.width
+                                        }
                                     }
                                 })
                                 .onEnded({ _ in
-                                    withAnimation(.easeInOut(duration: 0.25)) {
-                                        self.buttonOffset = .zero
+                                    let halfWidthButton = (geometry.size.width - 60) / 2
+                                    if buttonOffset > halfWidthButton {
+                                        // Navegar para a próxima tela
+                                    } else {
+                                        withAnimation(.easeInOut(duration: 0.25)) {
+                                            self.buttonOffset = .zero
+                                        }
                                     }
                                 })
                         )
