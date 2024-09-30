@@ -22,10 +22,12 @@ struct CarouselTabView: View {
         .tabViewStyle(.page(indexDisplayMode: .always))
         .onAppear {
             Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { _ in
-                if selectionIndex > carouselItens.count {
-                    selectionIndex = 1
+                withAnimation(.easeInOut(duration: 1)) {
+                    if selectionIndex > carouselItens.count {
+                        selectionIndex = 1
+                    }
+                    selectionIndex += 1
                 }
-                selectionIndex += 1
             }
         }
     }
