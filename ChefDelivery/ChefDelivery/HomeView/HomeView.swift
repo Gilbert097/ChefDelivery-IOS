@@ -48,7 +48,23 @@ struct HomeView: View {
                         .foregroundStyle(LinearGradient(colors: [.black.opacity(0.7)], startPoint: .top, endPoint: .bottom))
                         .opacity(isAnimating ? 1 : 0)
                         .offset(y: isAnimating ? 0 : -40)
-                        Spacer()
+                        
+                    Image("image")
+                        .resizable()
+                        .scaledToFit()
+                        .shadow(radius: 60)
+                        .padding(32)
+                        .gesture(
+                            DragGesture()
+                                .onChanged({ value in
+                                    print(value.translation)
+                                })
+                                .onEnded({ _ in
+                                    print("A interação acabou!")
+                                })
+                        )
+                    
+                    Spacer()
                 }
                 .onAppear {
                     withAnimation(.easeInOut(duration: 1.5)) {
