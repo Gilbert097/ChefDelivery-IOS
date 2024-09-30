@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var isAnimating = false
+    @State private var imageOffset: CGSize = .zero
     
     var body: some View {
         GeometryReader { geometry in
@@ -54,13 +55,14 @@ struct HomeView: View {
                         .scaledToFit()
                         .shadow(radius: 60)
                         .padding(32)
+                        .offset(x: self.imageOffset.width, y: self.imageOffset.height)
                         .gesture(
                             DragGesture()
                                 .onChanged({ value in
-                                    print(value.translation)
+                                    self.imageOffset = value.translation
                                 })
                                 .onEnded({ _ in
-                                    print("A interação acabou!")
+                                    self.imageOffset = .zero
                                 })
                         )
                     
