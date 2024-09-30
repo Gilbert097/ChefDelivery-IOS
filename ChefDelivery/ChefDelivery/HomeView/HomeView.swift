@@ -49,20 +49,25 @@ struct HomeView: View {
                         .foregroundStyle(LinearGradient(colors: [.black.opacity(0.7)], startPoint: .top, endPoint: .bottom))
                         .opacity(isAnimating ? 1 : 0)
                         .offset(y: isAnimating ? 0 : -40)
-                        
+                    
                     Image("image")
                         .resizable()
                         .scaledToFit()
                         .shadow(radius: 60)
-                        .padding(32)
+                        .padding(isAnimating ? 32 : 92)
+                        .opacity(isAnimating ? 1 : 0)
                         .offset(x: self.imageOffset.width, y: self.imageOffset.height)
                         .gesture(
                             DragGesture()
                                 .onChanged({ value in
-                                    self.imageOffset = value.translation
+                                    withAnimation(.easeInOut(duration: 0.5)) {
+                                        self.imageOffset = value.translation
+                                    }
                                 })
                                 .onEnded({ _ in
-                                    self.imageOffset = .zero
+                                    withAnimation(.easeInOut(duration: 0.5)) {
+                                        self.imageOffset = .zero
+                                    }
                                 })
                         )
                     
@@ -72,7 +77,7 @@ struct HomeView: View {
                     withAnimation(.easeInOut(duration: 1.5)) {
                         isAnimating = true
                     }
-            }
+                }
             }
         }
     }
