@@ -12,8 +12,9 @@ struct ProductDetailView: View {
     let product: ProductType
     
     private let homeService = HomeService()
-
+    
     @State private var productQuantity: Int = 1
+    @State private var showAlert = false
     
     var body: some View {
         VStack {
@@ -32,6 +33,9 @@ struct ProductDetailView: View {
                         await confirmOrder()
                     }
                 }
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Sucesso"), message: Text("Seu pedido foi enviado com sucesso!"), dismissButton: .default(Text("ok")))
+                }
                 
             }
         }
@@ -43,6 +47,7 @@ struct ProductDetailView: View {
             switch result {
             case .success(let success):
                 guard let success = success else { return }
+                self.showAlert = true
                 print(success)
             case .failure(let error):
                 print(error.localizedDescription)
