@@ -30,6 +30,7 @@
 		D495F9542CA745890034B229 /* ProductDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F9532CA745890034B229 /* ProductDetailHeaderView.swift */; };
 		D495F9562CA746320034B229 /* ProductDetailQuantityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F9552CA746320034B229 /* ProductDetailQuantityView.swift */; };
 		D495F9592CA8B5320034B229 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F9582CA8B5320034B229 /* HomeView.swift */; };
+		D495F95C2CAC76B10034B229 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F95B2CAC76B10034B229 /* HomeService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		D495F9532CA745890034B229 /* ProductDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailHeaderView.swift; sourceTree = "<group>"; };
 		D495F9552CA746320034B229 /* ProductDetailQuantityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailQuantityView.swift; sourceTree = "<group>"; };
 		D495F9582CA8B5320034B229 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D495F95B2CAC76B10034B229 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				D454EE532C9C728F006F60AD /* ChefDeliveryApp.swift */,
 				D434FBB02CA4A33F0020AD70 /* Extension */,
 				D434FB9B2C9CE9670020AD70 /* Model */,
+				D495F95A2CAC76980034B229 /* Networking */,
 				D434FB942C9C9C060020AD70 /* NavigationBar */,
 				D434FB982C9CE8D80020AD70 /* GridView */,
 				D434FBA22C9DB9A20020AD70 /* CarouselView */,
@@ -194,6 +197,14 @@
 				D495F9582CA8B5320034B229 /* HomeView.swift */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		D495F95A2CAC76980034B229 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D495F95B2CAC76B10034B229 /* HomeService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +285,7 @@
 				D495F9502CA742920034B229 /* StoreDetailProductsView.swift in Sources */,
 				D434FB9F2C9CEAB70020AD70 /* DataSourceMock.swift in Sources */,
 				D434FBAB2C9DF3650020AD70 /* StoresContainerView.swift in Sources */,
+				D495F95C2CAC76B10034B229 /* HomeService.swift in Sources */,
 				D434FBA12C9CF6920020AD70 /* OrderTypeView.swift in Sources */,
 				D434FBA92C9DEDA90020AD70 /* StoreItemView.swift in Sources */,
 				D434FBAD2C9E1D510020AD70 /* StoreDetailView.swift in Sources */,
