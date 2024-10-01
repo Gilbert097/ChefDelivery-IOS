@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StoreType: Identifiable, ObservableObject {
+class StoreType: Identifiable, ObservableObject, Decodable {
     
     let id: Int
     let name: String
@@ -18,7 +18,7 @@ class StoreType: Identifiable, ObservableObject {
     let distance: Int
     let products: [ProductType]
     
-    public  init(id: Int, 
+    public init(id: Int,
                  name: String,
                  logoImage: String,
                  headerImage: String,
@@ -35,9 +35,20 @@ class StoreType: Identifiable, ObservableObject {
         self.distance = distance
         self.products = products
     }
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case logoImage = "logo_image"
+        case headerImage = "header_image"
+        case location
+        case stars
+        case distance
+        case products
+    }
 }
 
-struct ProductType: Identifiable {
+struct ProductType: Identifiable, Decodable {
     let id: Int
     let name: String
     let description: String
