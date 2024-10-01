@@ -12,8 +12,10 @@ struct StoresContainerView: View {
     @State private var starFilter: Int = 0
     @State private var distanceFilter: (min: Int, max: Int)? = nil
     
+    var storesType: [StoreType]
+    
     private var storesFilter: [StoreType] {
-        let starsResult = storesMock.filter { $0.stars >= starFilter }
+        let starsResult = storesType.filter { $0.stars >= starFilter }
         
         if let (min, max) = distanceFilter {
             return starsResult.filter{($0.distance >= min && $0.distance <= max)}
@@ -105,5 +107,5 @@ struct StoresContainerView: View {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    StoresContainerView()
+    StoresContainerView(storesType: storesMock)
 }
