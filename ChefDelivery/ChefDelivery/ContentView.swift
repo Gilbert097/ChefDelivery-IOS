@@ -22,7 +22,24 @@ struct ContentView: View {
                     }
                 }
             }
+        }.onAppear {
+            fetchData()
         }
+    }
+    
+    // MARK: - Methods
+    
+    private func fetchData() {
+        let link = "https://private-b73e8-gilbertosilva.apiary-mock.com/questions"
+        guard let url = URL(string: link) else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let data = data {
+                print(data)
+            }
+        }.resume()
     }
 }
 
