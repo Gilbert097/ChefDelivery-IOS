@@ -10,6 +10,8 @@ import SwiftUI
 struct ProductDetailView: View {
     
     let product: ProductType
+    
+    private let homeService = HomeService()
 
     @State private var productQuantity: Int = 1
     
@@ -26,10 +28,27 @@ struct ProductDetailView: View {
                 Spacer()
                 
                 ProductDetailButtonView {
-                    print("O botão foi pressionado, \(product.name)")
+                    Task {
+                        await confirmOrder()
+                    }
                 }
                 
             }
+        }
+    }
+    
+    private func confirmOrder() async {
+        do {
+            let result = try await homeService.sendOrder(product: product)
+            switch result {
+            case .success(let success):
+                guard let success = success else { return }
+                print(success)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }
