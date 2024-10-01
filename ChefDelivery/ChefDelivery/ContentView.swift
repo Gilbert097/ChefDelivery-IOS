@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var storesType: [StoreType] = []
     private let homeService = HomeService()
     
     var body: some View {
@@ -26,7 +27,24 @@ struct ContentView: View {
                 }
             }
         }.onAppear {
-            homeService.fetchData()
+            Task {
+                await getStores()
+            }
+        }
+    }
+    
+    private func getStores() async {
+        do {
+            let result = try await homeService.fetchData()
+            
+            switch result {
+            case .success(let stores):
+                self.storesType = stores
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }
