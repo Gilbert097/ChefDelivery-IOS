@@ -33,9 +33,10 @@ struct ContentView: View {
                 }
             }
         }.onAppear {
-            Task {
-                await getStores()
-            }
+            getStoresWithAlamofire()
+//            Task {
+//                await getStores()
+//            }
         }
     }
     
@@ -53,6 +54,18 @@ struct ContentView: View {
         } catch {
             self.isLoading = false
             print(error.localizedDescription)
+        }
+    }
+    
+    private func getStoresWithAlamofire() {
+        homeService.fetchDataWithAlamofire { result in
+            self.isLoading = false
+            switch result {
+            case .success(let stores):
+                self.storesType = stores
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
     }
 }
