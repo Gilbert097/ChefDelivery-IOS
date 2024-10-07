@@ -55,7 +55,7 @@ struct StoresContainerView: View {
                         
                     }
                 }
-                .foregroundStyle(LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom))
+                .foregroundStyle(.black)
                 
                 Menu("Distância") {
                     
@@ -77,7 +77,7 @@ struct StoresContainerView: View {
                         }
                     }
                 }
-                .foregroundStyle(LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom))
+                .foregroundStyle(.black)
             }
             
             VStack(alignment: .leading, spacing: 30) {
@@ -86,7 +86,7 @@ struct StoresContainerView: View {
                     Text("Nenhum resultado encontrado.")
                         .font(.title2)
                         .bold()
-                        .foregroundStyle(LinearGradient(colors: [Color("ColorRed")], startPoint: .top, endPoint: .bottom))
+                        .foregroundStyle(Color("ColorRed"))
                         .padding(.vertical, 32)
                         .frame(maxWidth: .infinity)
                     

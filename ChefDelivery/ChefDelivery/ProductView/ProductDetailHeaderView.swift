@@ -22,18 +22,18 @@ struct ProductDetailHeaderView: View {
                 .bold()
                 .padding(.horizontal)
                 .padding(.top)
-                .foregroundStyle(LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom))
+                .foregroundStyle(.black)
             
             Text(product.description)
                 .padding(.horizontal)
-                .foregroundStyle(LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom))
+                .foregroundStyle(.black)
                 .multilineTextAlignment(.leading)
             
             Text(product.formattedPrice)
                 .font(.title3)
                 .bold()
                 .padding(.horizontal)
-                .foregroundStyle(LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom))
+                .foregroundStyle(.black)
         }
     }
 }

@@ -82,7 +82,7 @@ struct ProductDetailButtonView: View {
                 .font(.title3)
                 .bold()
                 .background(Color("ColorRed"))
-                .foregroundStyle(LinearGradient(colors: [.white], startPoint: .top, endPoint: .bottom))
+                .foregroundStyle(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 32))
                 .overlay(RoundedRectangle(cornerRadius: 32)
                     .stroke(Color.black, lineWidth: 0)

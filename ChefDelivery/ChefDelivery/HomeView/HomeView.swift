@@ -21,14 +21,14 @@ struct HomeView: View {
             ZStack {
                 
                 Circle()
-                    .foregroundStyle(LinearGradient(colors: [Color("ColorRed")], startPoint: .top, endPoint: .bottom))
+                    .foregroundStyle(Color("ColorRed"))
                     .frame(width: isAnimating ? 200 : 0)
                     .position(x: isAnimating ? 50 : -50, y: isAnimating ? 100 : -100)
                     .blur(radius: 60)
                     .opacity(isAnimating ? 0.5 : 0)
                 
                 Circle()
-                    .foregroundStyle(LinearGradient(colors: [Color("ColorRedDark")], startPoint: .top, endPoint: .bottom))
+                    .foregroundStyle(Color("ColorRedDark"))
                     .frame(width: isAnimating ? 200 : 0)
                     .position(
                         x: isAnimating ? geometry.size.width - 50 : geometry.size.width + 50,
@@ -42,7 +42,7 @@ struct HomeView: View {
                     Text("Chef Delivery")
                         .font(.system(size: 48))
                         .fontWeight(.heavy)
-                        .foregroundStyle(LinearGradient(colors: [Color("ColorRed")], startPoint: .top, endPoint: .bottom))
+                        .foregroundStyle(Color("ColorRed"))
                         .opacity(isAnimating ? 1 : 0)
                         .offset(y: isAnimating ? 0 : -40)
                     
@@ -50,7 +50,7 @@ struct HomeView: View {
                         .font(.title2)
                         .padding()
                         .multilineTextAlignment(.center)
-                        .foregroundStyle(LinearGradient(colors: [.black.opacity(0.7)], startPoint: .top, endPoint: .bottom))
+                        .foregroundStyle(.black.opacity(0.7))
                         .opacity(isAnimating ? 1 : 0)
                         .offset(y: isAnimating ? 0 : -40)
                     
@@ -89,7 +89,7 @@ struct HomeView: View {
                         Text("Descubra mais")
                             .font(.title2)
                             .bold()
-                            .foregroundStyle(LinearGradient(colors: [Color("ColorRedDark")], startPoint: .top, endPoint: .bottom))
+                            .foregroundStyle(Color("ColorRedDark"))
                             .offset(x: 20)
                         
                         HStack {
@@ -113,7 +113,7 @@ struct HomeView: View {
                                 Image(systemName: "chevron.right.2")
                                     .font(.system(size: 24))
                                     .bold()
-                                    .foregroundStyle(LinearGradient(colors: [.white], startPoint: .top, endPoint: .bottom))
+                                    .foregroundStyle(.white)
                                 
                             }
                             

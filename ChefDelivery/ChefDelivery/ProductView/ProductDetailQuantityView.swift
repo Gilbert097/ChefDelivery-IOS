@@ -19,7 +19,7 @@ struct ProductDetailQuantityView: View {
                 Text("Quantidade")
                     .font(.title3)
                     .bold()
-                    .foregroundStyle(LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom))
+                    .foregroundStyle(.black)
                 
                 HStack {
                     Button {
@@ -28,7 +28,7 @@ struct ProductDetailQuantityView: View {
                         }
                     } label: {
                         Image(systemName: "minus.circle.fill")
-                            .foregroundStyle(LinearGradient(colors: [Color("ColorRed")], startPoint: .top, endPoint: .bottom))
+                            .foregroundStyle(Color("ColorRed"))
                             .font(.title)
                             .bold()
                     }
@@ -36,13 +36,13 @@ struct ProductDetailQuantityView: View {
                     Text("\(productQuantity)")
                         .font(.title2)
                         .bold()
-                        .foregroundStyle(LinearGradient(colors: [.black], startPoint: .top, endPoint: .bottom))
+                        .foregroundStyle(.black)
                     
                     Button {
                         self.productQuantity += 1
                     } label: {
                         Image(systemName: "plus.circle.fill")
-                            .foregroundStyle(LinearGradient(colors: [Color("ColorRed")], startPoint: .top, endPoint: .bottom))
+                            .foregroundStyle(Color("ColorRed"))
                             .font(.title)
                             .bold()
                     }
